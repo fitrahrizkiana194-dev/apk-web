@@ -186,3 +186,56 @@ html,body{
 a:focus, button:focus, input:focus, textarea:focus{ outline: 3px solid var(--focus); outline-offset:3px; border-radius:8px; }
 .small{ font-size:0.85rem; }
 .muted{ color:var(--muted); }
+
+
+/* CHATBOT */
+.chat-window {
+  height: 260px;
+  overflow-y: auto;
+  background: #fff;
+  border-radius: 12px;
+  padding: 12px;
+  border: 1px solid #eee;
+  margin-bottom: 12px;
+}
+
+.chat {
+  max-width: 80%;
+  padding: 10px 12px;
+  margin-bottom: 8px;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.chat.user {
+  background: #fde4e6;
+  align-self: flex-end;
+  margin-left: auto;
+}
+
+.chat.bot {
+  background: #f3f3f3;
+  align-self: flex-start;
+}
+
+.doctor-status {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot.offline {
+  background: #999;
+}
+
+.dot.online {
+  background: #4caf50;
+}
