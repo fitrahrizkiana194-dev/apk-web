@@ -214,3 +214,100 @@
   console.log('Important: Implement backend endpoints and authentication for real doctor integration. Do not send PHI over unencrypted channels.');
 
 })();
+
+/* =========================
+   CHATBOT DOKTER SEDERHANA
+   ========================= */
+
+const chatWindow = document.getElementById("chat-window");
+const qaForm = document.getElementById("qa-form");
+const questionInput = document.getElementById("question");
+const connectBtn = document.getElementById("connect-btn");
+const doctorDot = document.getElementById("doctor-dot");
+const doctorText = document.getElementById("doctor-text");
+
+// status awal
+setTimeout(() => {
+  doctorDot.classList.remove("offline");
+  doctorDot.classList.add("online");
+  doctorText.textContent = "Dokter online (Chatbot Edukasi)";
+  botMessage(
+    "Halo 👋 Saya asisten kesehatan payudara. Silakan ajukan pertanyaan seputar SADARI, gejala, atau pencegahan. Saya tidak menggantikan diagnosis dokter ya 😊"
+  );
+}, 1500);
+
+// kirim pesan
+qaForm.addEventListener("submit", function (e) {
+  e.preventDefault();
+
+  const userText = questionInput.value.trim();
+  if (!userText) return;
+
+  userMessage(userText);
+  questionInput.value = "";
+
+  setTimeout(() => {
+    botMessage(getBotResponse(userText));
+  }, 800);
+});
+
+// tombol connect
+connectBtn.addEventListener("click", () => {
+  botMessage(
+    "Anda terhubung dengan chatbot edukasi. Untuk konsultasi langsung, silakan kunjungi fasilitas kesehatan terdekat."
+  );
+});
+
+/* =========================
+   FUNGSI CHAT
+   ========================= */
+
+function userMessage(text) {
+  const div = document.createElement("div");
+  div.className = "chat user";
+  div.textContent = text;
+  chatWindow.appendChild(div);
+  scrollChat();
+}
+
+function botMessage(text) {
+  const div = document.createElement("div");
+  div.className = "chat bot";
+  div.textContent = text;
+  chatWindow.appendChild(div);
+  scrollChat();
+}
+
+function scrollChat() {
+  chatWindow.scrollTop = chatWindow.scrollHeight;
+}
+
+/* =========================
+   LOGIKA JAWABAN BOT
+   ========================= */
+
+function getBotResponse(text) {
+  const msg = text.toLowerCase();
+
+  if (msg.includes("benjolan")) {
+    return "Benjolan pada payudara tidak selalu berbahaya. Namun jika benjolan baru, keras, tidak nyeri, dan tidak hilang, sebaiknya segera diperiksa oleh dokter.";
+  }
+
+  if (msg.includes("nyeri")) {
+    return "Nyeri payudara sering berkaitan dengan hormon. Namun jika nyeri menetap dan tidak terkait siklus haid, perlu evaluasi medis.";
+  }
+
+  if (msg.includes("sadari")) {
+    return "SADARI dilakukan 1 bulan sekali, idealnya 7–10 hari setelah menstruasi. Perhatikan bentuk, kulit, dan raba dengan lembut.";
+  }
+
+  if (msg.includes("kanker")) {
+    return "Kanker payudara dapat terdeteksi lebih awal dengan SADARI dan pemeriksaan rutin. Deteksi dini meningkatkan peluang kesembuhan.";
+  }
+
+  if (msg.includes("keluar cairan")) {
+    return "Cairan dari puting yang keluar tanpa dipencet, terutama berdarah atau bening, perlu segera diperiksa oleh tenaga medis.";
+  }
+
+  return "Terima kasih atas pertanyaannya. Jika keluhan berlanjut atau Anda ragu, sebaiknya konsultasi langsung ke dokter untuk pemeriksaan lebih lanjut.";
+}
