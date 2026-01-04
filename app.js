@@ -6,14 +6,15 @@ const form = document.getElementById("chat-form");
 
 function addMessage(sender, text) {
   const div = document.createElement("div");
-  div.className = sender;
-  div.innerText = text;
+  div.classList.add("message", sender); // lebih rapi
+  div.textContent = text;
   chatBox.appendChild(div);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-form.addEventListener("submit", e => {
+form.addEventListener("submit", (e) => {
   e.preventDefault();
+
   const msg = input.value.trim();
   if (!msg) return;
 
