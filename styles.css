@@ -241,52 +241,74 @@ a:focus, button:focus, input:focus, textarea:focus{ outline: 3px solid var(--foc
 }
 
 
-* {
-  box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+/* ===============================
+   TENTANG KANKER – RAPIN & KONSISTEN
+================================= */
+
+#tentang-kanker {
+  margin-top: 4rem;
 }
 
-body {
-  margin: 0;
-  background: #fff5f7;
-  color: #333;
+#tentang-kanker .lead {
+  max-width: 720px;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
 }
 
-.container {
-  max-width: 900px;
-  margin: 40px auto;
-  padding: 20px;
+/* Grid kartu agar sejajar */
+#tentang-kanker .cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
 }
 
-h1 {
+/* Kartu lebih rapi */
+#tentang-kanker .card {
+  padding: 1.5rem;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+/* Judul kartu */
+#tentang-kanker .card h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+/* List dalam kartu */
+#tentang-kanker ul,
+#tentang-kanker ol {
+  padding-left: 1.2rem;
+  margin: 0.4rem 0;
+}
+
+#tentang-kanker li {
+  margin-bottom: 0.35rem;
+  line-height: 1.6;
+}
+
+/* Muted text */
+#tentang-kanker .muted {
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+/* Highlight card */
+#tentang-kanker .highlight {
+  background: linear-gradient(135deg, #fde4e7, #fff);
+  border-left: 5px solid #e39ba1;
+}
+
+/* Disclaimer */
+#tentang-kanker .disclaimer {
+  max-width: 720px;
+  margin: 3rem auto 0;
+  font-size: 0.8rem;
   text-align: center;
-  color: #c2185b;
-  margin-bottom: 30px;
-}
-
-.card {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
-}
-
-.card h2 {
-  color: #ad1457;
-  margin-bottom: 10px;
-}
-
-.card ul,
-.card ol {
-  padding-left: 20px;
-}
-
-.card li {
-  margin-bottom: 6px;
-}
-
-.highlight {
-  background: #fde4ec;
-  border-left: 6px solid #c2185b;
+  opacity: 0.8;
 }
