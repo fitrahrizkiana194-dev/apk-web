@@ -239,3 +239,54 @@ a:focus, button:focus, input:focus, textarea:focus{ outline: 3px solid var(--foc
 .dot.online {
   background: #4caf50;
 }
+
+
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  background: #fff5f7;
+  color: #333;
+}
+
+.container {
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 20px;
+}
+
+h1 {
+  text-align: center;
+  color: #c2185b;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+}
+
+.card h2 {
+  color: #ad1457;
+  margin-bottom: 10px;
+}
+
+.card ul,
+.card ol {
+  padding-left: 20px;
+}
+
+.card li {
+  margin-bottom: 6px;
+}
+
+.highlight {
+  background: #fde4ec;
+  border-left: 6px solid #c2185b;
+}
