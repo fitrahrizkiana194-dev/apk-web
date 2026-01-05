@@ -1,393 +1,256 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Deteksi Dini Payudara — Tanya Dokter & Panduan SADARI</title>
-  <meta name="description" content="Sumber terpercaya, lembut, dan profesional tentang deteksi dini kanker payudara. Tanya dokter, panduan SADARI, gejala, dan mitos vs fakta." />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Deteksi Dini Kanker Payudara</title>
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #c05b7e;
+      --secondary: #fde4e7;
+      --text: #333;
+      --muted: #666;
+      --radius: 14px;
+    }
 
-  <!-- CSS (external) -->
-  <link rel="stylesheet" href="styles.css">
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+    }
+
+    body {
+      background: #fafafa;
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* ================= NAVBAR ================= */
+    header {
+      background: white;
+      box-shadow: 0 2px 10px rgba(0,0,0,.05);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+
+    nav {
+      max-width: 1100px;
+      margin: auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.2rem;
+      list-style: none;
+    }
+
+    nav a:hover {
+      color: var(--primary);
+    }
+
+    /* ================= HERO ================= */
+    .hero {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: var(--muted);
+      margin-bottom: 1.5rem;
+    }
+
+    .btn {
+      background: var(--primary);
+      color: white;
+      padding: 0.75rem 1.4rem;
+      border-radius: 999px;
+      display: inline-block;
+      font-weight: 500;
+    }
+
+    .hero img {
+      width: 100%;
+      border-radius: var(--radius);
+    }
+
+    /* ================= SECTION UMUM ================= */
+    section {
+      max-width: 1100px;
+      margin: auto;
+      padding: 4rem 1.5rem;
+    }
+
+    .section-title {
+      font-size: 1.8rem;
+      margin-bottom: 1.2rem;
+      color: var(--primary);
+    }
+
+    .lead {
+      max-width: 750px;
+      margin-bottom: 2.5rem;
+      color: var(--muted);
+    }
+
+    /* ================= CARDS ================= */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: white;
+      padding: 1.5rem;
+      border-radius: var(--radius);
+      box-shadow: 0 10px 25px rgba(0,0,0,.06);
+    }
+
+    .card h4 {
+      margin-bottom: .5rem;
+    }
+
+    .card ul {
+      padding-left: 1.2rem;
+    }
+
+    .card li {
+      margin-bottom: .4rem;
+    }
+
+    .disclaimer {
+      margin-top: 3rem;
+      font-size: .85rem;
+      text-align: center;
+      color: var(--muted);
+    }
+
+    /* ================= FOOTER ================= */
+    footer {
+      background: #111;
+      color: #ccc;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: .85rem;
+    }
+
+    /* ================= RESPONSIVE ================= */
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+    }
+  </style>
 </head>
+
 <body>
-  <header class="site-header" role="banner">
-    <div class="container header-row">
-      <div>
-        <div class="brand" aria-hidden="false">
-          <div class="logo" aria-hidden="true">BP</div>
-          <h1>Deteksi Dini Payudara</h1>
-        </div>
-        <nav class="site-nav" aria-label="Navigasi utama">
-          <a class="nav-link" href="#gejala">Gejala</a>
-          <a class="nav-link" href="#sadari">Panduan SADARI</a>
-          <a class="nav-link" href="#mitos-fakta">Mitos vs Fakta</a>
-          <a class="nav-link" href="#resources">Sumber</a>
-          <a class="nav-link" href="#tentang-kanker">Tentang kanker</a>
-        </nav>
-      </div>
 
-      <div class="header-actions">
-        <a class="btn secondary" href="#resources">Sumber</a>
-        <a class="btn rose" href="#sadari">Mulai SADARI</a>
-      </div>
-    </div>
-  </header>
+<header>
+  <nav>
+    <strong>BreastCare</strong>
+    <ul>
+      <li><a href="#tentang-kanker">Tentang Kanker</a></li>
+      <li><a href="#gejala">Gejala</a></li>
+      <li><a href="#pencegahan">Pencegahan</a></li>
+    </ul>
+  </nav>
+</header>
 
-  <main class="container" role="main">
-    <!-- HERO -->
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="hero-inner">
-        <h2 id="hero-title">Sumber yang lembut dan tepercaya untuk deteksi dini payudara</h2>
-        <p class="lead">Informasi yang jelas, empatik, dan praktis untuk membantu setiap perempuan memahami tanda-tanda awal dan melakukan pemeriksaan sendiri (SADARI) dengan percaya diri.</p>
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div>
+    <h1>Deteksi Dini Kanker Payudara</h1>
+    <p>
+      Website edukasi untuk meningkatkan kesadaran pentingnya
+      pencegahan dan pemeriksaan dini kanker payudara.
+    </p>
+    <a href="#tentang-kanker" class="btn">Pelajari Sekarang</a>
+  </div>
 
-        <div class="hero-cta">
-          <a class="btn rose" href="#sadari">Pelajari SADARI</a>
-          <a class="btn secondary" href="#gejala">Kenali Gejala</a>
-        </div>
+  <img src="https://images.unsplash.com/photo-1588776814546-1ffcf47267a5"
+       alt="Ilustrasi kesehatan payudara">
+</section>
 
-        <p class="disclaimer">Konten ini bukan pengganti konsultasi profesional. Jika menemukan perubahan, segera konsultasikan ke tenaga medis.</p>
-      </div>
-<!-- ================= TENTANG KANKER PAYUDARA ================= -->
-<section id="tentang-kanker" aria-labelledby="tentang-kanker-title" class="mt">
-  <h3 id="tentang-kanker-title" class="section-title">
-    Tentang Kanker Payudara
-  </h3>
+<!-- ================= TENTANG KANKER ================= -->
+<section id="tentang-kanker">
+  <h2 class="section-title">Tentang Kanker Payudara</h2>
 
   <p class="lead">
-    Kanker payudara merupakan salah satu penyakit kanker yang paling sering
-    menyerang perempuan. Penyakit ini berkembang secara perlahan dan sering kali
-    tidak menimbulkan gejala pada tahap awal, sehingga deteksi dini menjadi sangat
-    penting.
+    Kanker payudara adalah penyakit yang terjadi akibat pertumbuhan
+    sel abnormal pada jaringan payudara secara tidak terkendali.
+    Penyakit ini dapat berkembang tanpa gejala pada tahap awal.
   </p>
 
-  <div class="cards" role="list">
-
-    <!-- Pengertian -->
-    <article class="card" role="listitem">
-      <h4>📌 Pengertian Kanker Payudara</h4>
+  <div class="cards">
+    <div class="card">
+      <h4>Apa itu Kanker Payudara?</h4>
       <p>
-        Kanker payudara adalah kondisi ketika sel-sel abnormal pada jaringan
-        payudara tumbuh secara tidak terkendali. Sel abnormal ini dapat berasal dari
-        saluran susu (duktus) atau kelenjar penghasil ASI (lobulus), kemudian
-        berkembang menjadi tumor ganas dan berpotensi menyebar ke bagian tubuh lain
-        melalui sistem limfatik atau aliran darah.
+        Kanker payudara berasal dari sel di saluran susu atau
+        kelenjar payudara yang mengalami mutasi dan berkembang
+        menjadi tumor ganas.
       </p>
-    </article>
+    </div>
 
-    <!-- Jenis -->
-    <article class="card" role="listitem">
-      <h4>🧬 Jenis-Jenis Kanker Payudara</h4>
+    <div class="card">
+      <h4>Jenis Kanker Payudara</h4>
       <ul>
-        <li>
-          <strong>Karsinoma Duktal Invasif</strong>  
-          <p class="muted">Jenis paling umum, berasal dari saluran susu dan dapat
-          menyebar ke jaringan sekitar.</p>
-        </li>
-        <li>
-          <strong>Karsinoma Lobular Invasif</strong>  
-          <p class="muted">Berasal dari kelenjar penghasil ASI dan sering sulit
-          terdeteksi pada tahap awal.</p>
-        </li>
-        <li>
-          <strong>Kanker Payudara Non-Invasif (In Situ)</strong>  
-          <p class="muted">Sel kanker masih terbatas dan belum menyebar ke jaringan
-          sekitar.</p>
-        </li>
-        <li>
-          <strong>Kanker Payudara Inflamasi</strong>  
-          <p class="muted">Jenis agresif yang menyebabkan payudara tampak merah,
-          bengkak, dan terasa hangat.</p>
-        </li>
+        <li>Karsinoma duktal invasif</li>
+        <li>Karsinoma lobular invasif</li>
+        <li>Kanker payudara in situ</li>
+        <li>Kanker payudara inflamasi</li>
       </ul>
-    </article>
+    </div>
 
-    <!-- Stadium -->
-    <article class="card" role="listitem">
-      <h4>📊 Stadium Kanker Payudara</h4>
+    <div class="card">
+      <h4>Stadium Kanker</h4>
       <p>
-        Stadium kanker payudara digunakan untuk menunjukkan tingkat keparahan
-        penyakit, yaitu:
+        Stadium kanker payudara dibagi dari stadium 0 hingga IV.
+        Semakin dini stadium ditemukan, semakin besar peluang
+        kesembuhan.
       </p>
-      <ol>
-        <li><strong>Stadium 0</strong> – Sel kanker masih terbatas di saluran susu</li>
-        <li><strong>Stadium I</strong> – Tumor kecil dan belum menyebar</li>
-        <li><strong>Stadium II</strong> – Penyebaran ke kelenjar getah bening terdekat</li>
-        <li><strong>Stadium III</strong> – Penyebaran lokal yang lebih luas</li>
-        <li><strong>Stadium IV</strong> – Kanker menyebar ke organ lain (metastasis)</li>
-      </ol>
-    </article>
+    </div>
 
-    <!-- Faktor Risiko -->
-    <article class="card" role="listitem">
-      <h4>⚠️ Faktor Risiko Kanker Payudara</h4>
+    <div class="card">
+      <h4>Pentingnya Deteksi Dini</h4>
       <p>
-        Meskipun penyebab pasti kanker payudara belum diketahui, terdapat beberapa
-        faktor yang dapat meningkatkan risiko, antara lain:
+        Deteksi dini melalui SADARI, SADANIS, dan mammografi
+        dapat menurunkan risiko kematian akibat kanker payudara.
       </p>
-      <ul>
-        <li>Usia di atas 40 tahun</li>
-        <li>Riwayat keluarga dengan kanker payudara</li>
-        <li>Perubahan hormon dalam jangka panjang</li>
-        <li>Kurang aktivitas fisik</li>
-        <li>Kebiasaan merokok dan konsumsi alkohol</li>
-      </ul>
-    </article>
-
-    <!-- Gejala Awal -->
-    <article class="card" role="listitem">
-      <h4>🔍 Gejala Awal yang Perlu Diwaspadai</h4>
-      <p>
-        Gejala kanker payudara sering kali tidak terasa nyeri pada awalnya.
-        Beberapa tanda yang perlu diperhatikan antara lain:
-      </p>
-      <ul>
-        <li>Benjolan pada payudara atau ketiak</li>
-        <li>Perubahan ukuran atau bentuk payudara</li>
-        <li>Kulit payudara tampak berlekuk atau kemerahan</li>
-        <li>Puting tertarik ke dalam atau mengeluarkan cairan tidak normal</li>
-      </ul>
-    </article>
-
-    <!-- Deteksi Dini -->
-    <article class="card highlight" role="listitem">
-      <h4>🎯 Pentingnya Deteksi Dini</h4>
-      <p>
-        Deteksi dini kanker payudara dapat meningkatkan peluang kesembuhan secara
-        signifikan. Pemeriksaan dapat dilakukan melalui:
-      </p>
-      <ul>
-        <li>SADARI (Periksa Payudara Sendiri)</li>
-        <li>SADANIS (Pemeriksaan Klinis oleh Tenaga Medis)</li>
-        <li>Mammografi atau USG Payudara</li>
-      </ul>
-      <p class="muted">
-        Pemeriksaan rutin membantu mengenali perubahan sejak tahap awal.
-      </p>
-    </article>
-
+    </div>
   </div>
 
   <p class="disclaimer">
-    Informasi ini bersifat edukatif dan tidak menggantikan diagnosis medis.
-    Jika Anda menemukan perubahan pada payudara, segera konsultasikan ke tenaga
-    kesehatan profesional.
+    Informasi pada website ini bersifat edukatif dan tidak
+    menggantikan konsultasi medis profesional.
   </p>
 </section>
-<!-- ================= END TENTANG KANKER ================= -->
 
-      <figure class="hero-figure" aria-hidden="true">
-        <!-- simple illustration (SVG) -->
-        <svg viewBox="0 0 200 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ilustrasi dukungan">
-          <defs>
-            <linearGradient id="g" x1="0" x2="1">
-              <stop offset="0" stop-color="#f7dfe1"/>
-              <stop offset="1" stop-color="#e39ba1"/>
-            </linearGradient>
-          </defs>
-          <rect x="0" y="0" width="200" height="140" rx="12" fill="url(#g)"/>
-          <g transform="translate(16,18)">
-            <path d="M20 70 Q40 10 80 60 Q120 10 160 70" stroke="#fff" stroke-width="6" fill="none" stroke-linecap="round" stroke-linejoin="round" opacity="0.95"/>
-            <circle cx="50" cy="80" r="10" fill="#fff" opacity="0.95"/>
-            <circle cx="110" cy="80" r="10" fill="#fff" opacity="0.95"/>
-          </g>
-        </svg>
-      </figure>
-    </section>
+<footer>
+  © 2026 • Website Edukasi Kanker Payudara • Untuk Keperluan Akademik
+</footer>
 
-    <!-- MAIN GRID: Left (content) and Right (sidebar interactive including Q&A) -->
-    <div class="grid" aria-live="polite">
-      <!-- LEFT COLUMN: Gejala + Mitos -->
-      <section id="gejala" aria-labelledby="gejala-title">
-        <h3 id="gejala-title" class="section-title">Gejala yang Perlu Diwaspadai</h3>
-
-        <div class="cards" role="list">
-          <!-- cards... (same content as earlier) -->
-          <article class="card" role="listitem" aria-label="Benjolan pada payudara">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <circle cx="12" cy="11" r="5.2" stroke="#8a5b5f" stroke-width="1.4"/>
-                <path d="M4 20c2-3 6-5 8-5s6 2 8 5" stroke="#8a5b5f" stroke-width="1.1" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Benjolan atau tonjolan baru</h3>
-              <p>Benjolan yang tidak biasa di payudara atau di daerah ketiak yang tetap ada dan tidak hilang dalam beberapa siklus.</p>
-            </div>
-          </article>
-
-          <article class="card" role="listitem" aria-label="Perubahan kulit">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <rect x="3" y="3" width="18" height="18" rx="3" stroke="#8a5b5f" stroke-width="1.2"/>
-                <path d="M7 12h10" stroke="#8a5b5f" stroke-width="1.2" stroke-linecap="round"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Perubahan kulit atau lekukan</h3>
-              <p>Kulit yang menebal, cekung, merah, atau muncul tekstur seperti kulit jeruk.</p>
-            </div>
-          </article>
-
-          <article class="card" role="listitem" aria-label="Keluar cairan dari puting">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3v10" stroke="#8a5b5f" stroke-width="1.4" stroke-linecap="round"/>
-                <circle cx="12" cy="17" r="3" stroke="#8a5b5f" stroke-width="1.2"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Keluarnya cairan dari puting</h3>
-              <p>Cairan yang keluar tanpa menyusui, terutama jika berdarah atau jelas berwarna.</p>
-            </div>
-          </article>
-
-          <article class="card" role="listitem" aria-label="Perubahan ukuran atau bentuk">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M6 9c2-4 10-4 12 0v6c-2 4-10 4-12 0V9z" stroke="#8a5b5f" stroke-width="1.2"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Perubahan ukuran atau bentuk</h3>
-              <p>Perubahan asimetris baru pada salah satu payudara atau lekukan yang tampak.</p>
-            </div>
-          </article>
-
-          <article class="card" role="listitem" aria-label="Nyeri pada payudara">
-            <div class="icon" aria-hidden="true">
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none">
-                <path d="M12 3c2 3 6 2 7 6s-3 7-7 11c-4-4-8-6-7-11 1-4 5-3 7-6z" stroke="#8a5b5f" stroke-width="1.2"/>
-              </svg>
-            </div>
-            <div>
-              <h3>Nyeri yang menetap</h3>
-              <p>Nyeri baru yang tidak berhubungan dengan siklus menstruasi dan terus berlangsung.</p>
-            </div>
-          </article>
-        </div>
-
-        <!-- Mitos vs Fakta -->
-        <section id="mitos-fakta" aria-labelledby="mitos-title" class="mt">
-          <h3 id="mitos-title" class="section-title">Mitos vs Fakta</h3>
-          <div class="accordion" role="list">
-            <div class="accordion-item" role="listitem">
-              <button class="accordion-header" aria-expanded="false">
-                <h4>Mitos: "Benjolan selalu berarti kanker."</h4>
-                <span aria-hidden="true">+</span>
-              </button>
-              <div class="accordion-body" hidden>
-                <p>Mitos. Banyak benjolan bersifat jinak (misalnya kista atau fibroadenoma). Namun setiap benjolan baru perlu evaluasi oleh tenaga medis untuk memastikan penyebabnya.</p>
-              </div>
-            </div>
-
-            <div class="accordion-item" role="listitem">
-              <button class="accordion-header" aria-expanded="false">
-                <h4>Mitos: "Jika tidak ada riwayat keluarga, saya aman."</h4>
-                <span aria-hidden="true">+</span>
-              </button>
-              <div class="accordion-body" hidden>
-                <p>Fakta. Meskipun faktor keluarga meningkatkan risiko, sebagian besar kasus terjadi tanpa riwayat keluarga. Pemeriksaan rutin dan kewaspadaan penting untuk semua perempuan.</p>
-              </div>
-            </div>
-
-            <div class="accordion-item" role="listitem">
-              <button class="accordion-header" aria-expanded="false">
-                <h4>Mitos: "SADARI hanya perlu dilakukan oleh yang berisiko tinggi."</h4>
-                <span aria-hidden="true">+</span>
-              </button>
-              <div class="accordion-body" hidden>
-                <p>SADARI adalah keterampilan pencegahan yang berguna bagi semua perempuan. Melakukan pemeriksaan sendiri secara berkala membantu mengenali perubahan lebih awal.</p>
-              </div>
-            </div>
-          </div>
-        </section>
-      </section>
-
-      <!-- RIGHT COLUMN: SADARI interactive + Q&A -->
-      <aside id="right-col">
-        <div id="sadari" class="sadari" aria-labelledby="sadari-title" role="complementary">
-          <div class="sadari-header">
-            <div>
-              <h3 id="sadari-title" class="section-title">Panduan SADARI (Periksa Sendiri)</h3>
-              <p class="muted">Langkah sederhana, lakukan setiap bulan setelah menstruasi atau sesuai anjuran tenaga medis.</p>
-            </div>
-
-            <div style="width:160px;">
-              <div class="progress" aria-hidden="true">
-                <i id="progress-bar" style="width:0%"></i>
-              </div>
-              <div class="progress-note" id="progress-text">Langkah 1 dari 5</div>
-            </div>
-          </div>
-
-          <div class="step-content" id="step-content" tabindex="0" aria-live="polite"></div>
-
-          <div class="step-controls">
-            <button id="prev-btn" class="btn ghost" aria-label="Sebelumnya" disabled>⇦ Sebelumnya</button>
-            <div class="right-controls">
-              <button id="help-btn" class="btn secondary" aria-label="Tips keamanan">Tips</button>
-              <button id="next-btn" class="btn rose" aria-label="Berikutnya">Berikutnya ⇨</button>
-            </div>
-          </div>
-
-          <details class="notes">
-            <summary>Catatan Keamanan & Kapan Harus ke Dokter</summary>
-            <p>Jika Anda menemukan benjolan baru, perubahan kulit, atau keluarnya cairan dari puting, segera temui tenaga medis. Panduan ini membantu pengamatan awal — diagnosis memerlukan pemeriksaan profesional.</p>
-          </details>
-        </div>
-
-        <!-- Q&A / Chat with doctor -->
-        <section id="qa" class="qa" aria-labelledby="qa-title">
-          <h3 id="qa-title" class="section-title">Sesi Tanya Jawab — Hubungi Dokter</h3>
-
-          <div class="doctor-status" id="doctor-status" aria-live="polite">
-            <span class="dot offline" id="doctor-dot"></span>
-            <span id="doctor-text">Menghubungkan ke layanan dokter...</span>
-          </div>
-
-          <div class="chat-window" id="chat-window" role="log" aria-live="polite" aria-atomic="false">
-            <!-- messages appended here -->
-          </div>
-
-          <form id="qa-form" class="qa-form" aria-label="Form tanya dokter">
-            <label for="name" class="visually-hidden">Nama</label>
-            <input id="name" name="name" type="text" placeholder="Nama (opsional)" maxlength="60" />
-
-            <label for="question" class="visually-hidden">Pertanyaan</label>
-            <textarea id="question" name="question" required placeholder="Tuliskan pertanyaan Anda kepada dokter..." rows="3" maxlength="1000"></textarea>
-
-            <div class="form-actions">
-              <button type="button" id="connect-btn" class="btn ghost">Hubungkan ke Dokter</button>
-              <button type="submit" class="btn rose">Kirim</button>
-            </div>
-          </form>
-
-          <p class="muted small">Jawaban dokter mungkin membutuhkan waktu. Untuk keadaan darurat, hubungi layanan kesehatan darurat setempat.</p>
-        </section>
-      </aside>
-    </div>
-
-    <!-- Resources / Footer area -->
-    <section id="resources" class="mt">
-      <h3 class="section-title">Sumber Terpercaya</h3>
-      <ul class="resources-list">
-        <li>Organisasi kesehatan nasional dan rumah sakit</li>
-        <li>Dokter spesialis onkologi payudara</li>
-        <li>Pusat informasi kanker yang terverifikasi</li>
-      </ul>
-    </section>
-
-    <footer class="site-footer" role="contentinfo">
-      <p>Konten informatif — Jika ragu, segera konsultasikan ke profesional medis. © 2025</p>
-    </footer>
-  </main>
-
-  <!-- JS (external) -->
-  <script src="app.js" defer></script>
 </body>
 </html>
